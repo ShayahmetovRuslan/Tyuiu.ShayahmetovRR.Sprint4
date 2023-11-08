@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.ShayahmetovRR.Sprint4.Task1.V9.Lib;
+using Tyuiu.ShayahmetovRR.Sprint4.Task3.V25.Lib;
 
-namespace Tyuiu.ShayahmetovRR.Sprint4.Task1.V9
+namespace Tyuiu.ShayahmetovRR.Sprint4.Task3.V25
 {
 	internal class Program
 	{
@@ -16,34 +16,36 @@ namespace Tyuiu.ShayahmetovRR.Sprint4.Task1.V9
 			Console.WriteLine("******************************************************************************");
 			Console.WriteLine("* Спринт #4                                                                  *");
 			Console.WriteLine("* Тема: Обработка структурных типов                                          *");
-			Console.WriteLine("* Задание #1                                                                 *");
-			Console.WriteLine("* Вариант #9                                                                 *");
+			Console.WriteLine("* Задание #3                                                                 *");
+			Console.WriteLine("* Вариант #25                                                                *");
 			Console.WriteLine("* Выполнил: Шаяхметов Р.Р     | АСОиУб 23-1                                  *");
 			Console.WriteLine("******************************************************************************");
 			Console.WriteLine("* УСЛОВИЕ:                                                                   *");
-			Console.WriteLine("* Дан одномерный целочисленный массив на 10 элементов заполненный статическими *");
-			Console.WriteLine("* значениями в диапазоне от 0 до 9 подсчитать произведение четных элементов  *");
-			Console.WriteLine("                                 массива.  {2, 6, 2, 3, 4, 5, 4, 9, 7, 8}     ");
+			Console.WriteLine("* Посчитать элементы 4-го столбца двумерного массива                         *");
 			Console.WriteLine("******************************************************************************");
 			Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                           *");
 			Console.WriteLine("******************************************************************************");
 
-			int len;
-			Console.WriteLine("Введите длину списка: ");
-			len = Convert.ToInt32(Console.ReadLine());
+			int[,] mtrx = new int[5, 5] { { 7, 3, 5, 3, 6 },
+										  {4, 6 ,2, 5, 7},
+										  {2, 3, 3, 3, 5},
+										  {2, 7, 7, 6, 2},
+										  {6, 6, 4, 3, 6} };
 
-			int[] array = new int[len];
-			Console.WriteLine("Введите значения списка: ");
-			for (int i = 0; i < len; i++)
+			Console.WriteLine("Массив: ");
+			for (int i = 0; i < mtrx.GetLength(0); i++)
 			{
-				array[i] = Convert.ToInt32(Console.ReadLine());
+				Console.Write("\n");
+				for (int j = 0; j < mtrx.GetLength(1); j++)
+				{
+					Console.Write($"{mtrx[i, j]} ");
+				}
 			}
-
-			Console.WriteLine("******************************************************************************");
+			Console.WriteLine("\n \n******************************************************************************");
 			Console.WriteLine("* РЕЗУЛЬТАТ:                                                                 *");
 			Console.WriteLine("******************************************************************************");
 
-			Console.WriteLine("Результат: " + ds.Calculate(array));
+			Console.WriteLine(ds.Calculate(mtrx));
 			Console.ReadKey();
 		}
 	}
