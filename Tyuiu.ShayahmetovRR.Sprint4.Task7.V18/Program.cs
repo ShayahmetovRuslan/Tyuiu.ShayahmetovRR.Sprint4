@@ -30,7 +30,7 @@ namespace Tyuiu.ShayahmetovRR.Sprint4.Task7.V18
 			int rows = 5;
 			int cols = 3;
 			int[,] mtrx = new int[rows, cols];
-			string str = "145258749635789";
+			string str = "623351179845632";
 
 			Console.WriteLine($"Строка: {str}");
 
